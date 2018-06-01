@@ -1,31 +1,72 @@
 import React, { Component } from 'react';
-
+import data from '../data.js';
 import ContactList from '../Components/ContactList'
+import ContactForm from '../Components/ContactForm';
 
 class Contacts extends Component {
 	constructor(){
 		super();
 		this.state = {
-			contactList: [{
-				createdAt: new Date(),
-				id: new Date().valueOf(),
-				firstName: "John",
-				lastName: 'Doe',
-				age: 33
-			}]
+			contactList: data.contacts,
+			tags: data.tags,
+			activeView: 'list',
 		};
 	}
 
 	componentDidMount(){
-		console.log(this.state.contactList[0])
+		console.log(this.state)
 	}
-	render(){
+
+	setView(name){
+		this.setState({activeView: name})
+	}
+
+	leftColumn(){
 		return(
 			<div>
-				<h1> Contacts Page</h1>
-				<ContactList contacts={this.state.contactList}/>
+				<ContactList contacts={this.state.contactList} onToggleContactNew={this.setView.bind(this)} />
 			</div>
 		)
+	}
+
+	rightColumn(){
+		switch (this.state.activeView) {
+			case "new":
+				return (
+				<div style={{ maxWidth: 960, margin: 'auto' }}>
+					<ContactForm setView={this.setView.bind(this)}/>
+				</div>
+			)
+			break;
+			default: 
+        		return ( <div>Cliquez sur un contact</div> );
+		}
+	}
+
+	render(){
+		const style = this.style()
+		return(
+			<div style={ style.container }>
+				<div style={ style.leftColumn }> {this.leftColumn()} </div>
+				<div style={ style.rightColumn }> {this.rightColumn()} </div>
+
+			</div>
+		)
+	}
+
+	style(){
+		return {
+			container: {
+				display: 'flex',
+				flex: 1
+			},
+			leftColumn: {
+				flex: 1
+			},
+			rightColumn: {
+				flex: 4
+			}
+		};
 	}
 }
 
