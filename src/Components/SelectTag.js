@@ -1,0 +1,79 @@
+import React, { Component } from 'react';
+import { difference } from 'lodash';
+
+const filterSelected = (options, value) => {
+	let result = difference(options, value);
+	console.log(result, options, value);
+	return result
+};
+
+class SelectTag extends Component {
+
+	addTag(tag){
+		this.props.addTag(tag)
+	}
+
+	removeTag(tag){
+		this.props.removeTag(tag)
+	}
+
+	selected(){
+		return (
+			<div style={this.style().selector}>
+				{ this.props.value.map((tag)=>{
+				return (
+					<div  style={this.style().selectable} key={tag} onClick={ this.removeTag.bind(this, tag) }>
+						{tag}
+					</div>
+				)
+			}) }
+			</div>
+		)
+	}
+
+	selectable(){
+		return (
+			<div style={this.style().selector} >
+				{ filterSelected(this.props.options, this.props.value).map((tag)=>{
+					return (
+						<div style={this.style().selectable} key={tag} onClick={ this.addTag.bind(this, tag) }>
+							{tag}
+						</div>
+					)
+				})
+				}
+			</div>
+		)
+	}
+
+	render(){
+		let style = this.style()
+		return (
+			<div style={style.container}>
+				{ this.selectable() }
+				{ this.selected() }
+			</div>
+		)
+	}
+
+	style(){
+		return {
+			container: {
+				display: 'flex',
+				flex: 1,
+			},
+			selector: {
+				flex: 1,
+				margin: 10,
+				padding: 10,
+				border: '1px solid #efefef',
+			},
+			selectable: {
+				cursor: 'pointer',
+				padding: 5,
+			}
+		}
+	}
+}
+
+export default SelectTag;

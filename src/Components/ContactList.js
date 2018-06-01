@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import ContactItem from '../Components/ContactItem';
 
-const mainColor = "#222";
-
 class ContactList extends Component {
 
 	handleToggleContactNew(){

@@ -34,7 +34,7 @@ class Contacts extends Component {
 			case "new":
 				return (
 				<div style={{ maxWidth: 960, margin: 'auto' }}>
-					<ContactForm setView={this.setView.bind(this)}/>
+					<ContactForm setView={this.setView.bind(this)} tags={this.state.tags}/>
 				</div>
 			)
 			break;
