@@ -31,7 +31,7 @@ const contacts = [
 		createdAt: new Date()*1.4,
 		id: 5,
 		firstName: "Mathias",
-		lastName: 'De Traiflequipi quetonkeur',
+		lastName: 'De Traiflequipi Quetonkeur',
 		age: 33
 	},
 	{

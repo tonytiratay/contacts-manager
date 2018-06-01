@@ -27,7 +27,6 @@ class ContactList extends Component {
 	style(){
 		return {
 			container: {
-				borderRight: '5px solid ' + mainColor,
 			},
 			button: {
 				padding: 15,

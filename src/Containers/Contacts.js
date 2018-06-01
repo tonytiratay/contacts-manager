@@ -9,7 +9,7 @@ class Contacts extends Component {
 		this.state = {
 			contactList: data.contacts,
 			tags: data.tags,
-			activeView: 'list',
+			activeView: 'new',
 		};
 	}
 
