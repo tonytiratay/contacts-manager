@@ -74,7 +74,7 @@ class Contacts extends Component {
 			<div>
 				<header style={style.header}>
 		          <img src={logo} className="App-logo" alt="logo" />
-		          <h1 className="App-title">Contact Manager</h1>
+		          <h1 className="App-title">REACT Contact Manager</h1>
 		        </header>
 		        <div style={ style.container }>
 					<div style={ style.leftColumn }> {this.leftColumn()} </div>

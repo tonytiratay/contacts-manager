@@ -2,11 +2,12 @@ import React, { Component } from 'react';
 import SelectTag from './SelectTag';
 
 const blankUser = {
-	firstName: '',
-	lastName: '',
-	phone: '',
-	description: '',
+	name: '',
+	company: '',
+	email: '',
+	hireable: '',
 	avatar: 'https://placeimg.com/200/200/people',
+	githubName: '',
 	tags: []
 };
 
@@ -65,33 +66,44 @@ class ContactForm extends Component{
 				<form onSubmit = { this.handleSubmit.bind(this) }>
 					<div style={ style.formInputs }>
 						<div style={ style.formInputContainer }>
-							<label style={ style.label } htmlFor="firstName">Prenom</label>
+							<label style={ style.label } htmlFor="githubName">Nom github</label>
+							<input 
+								style={ style.forminput }
+								id="githubName"
+								name="githubName"
+								value={ user.githubName }
+								onChange={ this.handleChange.bind(this) }/>
+						</div>
+					</div>
+					<div style={ style.formInputs }>
+						<div style={ style.formInputContainer }>
+							<label style={ style.label } htmlFor="name">Nom</label>
 							<input 
 								required
 								style={ style.forminput }
-								id="firstName"
-								name="firstName"
-								value={ user.firstName }
+								id="name"
+								name="name"
+								value={ user.name }
 								onChange={ this.handleChange.bind(this) }/>
 						</div>
 						<div style={ style.formInputContainer }>
-							<label style={ style.label } htmlFor="lastName">Nom</label>
+							<label style={ style.label } htmlFor="company">Entreprise</label>
 							<input 
 								required
 								style={ style.forminput }
-								id="lastName"
-								name="lastName"
-								value={ user.lastName }
+								id="company"
+								name="company"
+								value={ user.company }
 								onChange={ this.handleChange.bind(this) }/>
 						</div>
 						<div style={ style.formInputContainer }>
-							<label style={ style.label } htmlFor="phone">Téléphone</label>
+							<label style={ style.label } htmlFor="email">Email</label>
 							<input 
 								required
 								style={ style.forminput }
-								id="phone"
-								name="phone"
-								value={ user.phone }
+								id="email"
+								name="email"
+								value={ user.email }
 								onChange={ this.handleChange.bind(this) }/>
 						</div>
 					</div>
@@ -103,25 +115,14 @@ class ContactForm extends Component{
 					</div>
 					<div style={ style.formInputs }>
 						<div style={ style.formInputContainer }>
-							<label style={ style.label } htmlFor="description">Description</label>
-							<textarea 
-								rows="5"
-								style={ style.forminput }
-								id="description"
-								name="description"
-								value={ user.description }
-								onChange={ this.handleChange.bind(this) }>
-							</textarea>
-						</div>
-					</div>
-					<div style={ style.formInputs }>
-						<div style={ style.formInputContainer }>
-							<label style={ style.label } htmlFor="avatar">Lien vers l'avatar</label>
+							<label style={ style.label } htmlFor="hireable">Embauchable</label>
 							<input 
+								type="checkbox"
+								required
 								style={ style.forminput }
-								id="avatar"
-								name="avatar"
-								value={ user.avatar }
+								id="hireable"
+								name="hireable"
+								value={ user.hireable }
 								onChange={ this.handleChange.bind(this) }/>
 						</div>
 					</div>
