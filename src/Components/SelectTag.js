@@ -3,7 +3,6 @@ import { difference } from 'lodash';
 
 const filterSelected = (options, value) => {
 	let result = difference(options, value);
-	console.log(result, options, value);
 	return result
 };
 
@@ -67,6 +66,8 @@ class SelectTag extends Component {
 				margin: 10,
 				padding: 10,
 				border: '1px solid #efefef',
+				minHeight: 170,
+				minWidth: 250,
 			},
 			selectable: {
 				cursor: 'pointer',

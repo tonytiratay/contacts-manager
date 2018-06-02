@@ -13,9 +13,9 @@ class Contactitem extends Component {
 		let style =  this.style();
 		return(
 			<div style={style.container}>
-				<div style={style.userContainer}>
+				<div style={style.userContainer} onClick={this.props.onClick}>
 					<div style={style.imageContainer}>
-						<div style={style.image}></div>
+						<div style={{...style.image, backgroundImage: `url(${contact.avatar})`}}></div>
 					</div>
 					<div style={style.userInfo}>
 						<h3 style={style.firstName}>{contact.firstName}</h3>
@@ -47,7 +47,6 @@ class Contactitem extends Component {
 				width: '50px',
 				height: '50px',
 				alignSelf: 'center',
-				backgroundImage: `url(https://placeimg.com/200/200/people?q=${this.props.index})`,
 				backgroundSize: 'cover',
 				borderRadius: '50%',
 				border: isEven(this.props.index) ? '2px solid #fff' : '2px solid ' + grey,

@@ -4,7 +4,7 @@ import SelectTag from './SelectTag';
 const blankUser = {
 	firstName: '',
 	lastName: '',
-	email: '',
+	phone: '',
 	description: '',
 	avatar: 'https://placeimg.com/200/200/people',
 	tags: []
@@ -48,7 +48,7 @@ class ContactForm extends Component{
 
 	handleSubmit(e){
 		e.preventDefault();
-		console.log(this.state.user);
+		this.props.onSave(this.state.user);
 	}
 
 	tags(){
@@ -85,14 +85,20 @@ class ContactForm extends Component{
 								onChange={ this.handleChange.bind(this) }/>
 						</div>
 						<div style={ style.formInputContainer }>
-							<label style={ style.label } htmlFor="email">Mail</label>
+							<label style={ style.label } htmlFor="phone">Téléphone</label>
 							<input 
 								required
 								style={ style.forminput }
-								id="email"
-								name="email"
-								value={ user.email }
+								id="phone"
+								name="phone"
+								value={ user.phone }
 								onChange={ this.handleChange.bind(this) }/>
+						</div>
+					</div>
+					<div style={ style.formInputs }>
+						<div style={ style.formInputContainer }>
+							<label style={ style.label } htmlFor="tags">Associez des tags</label>
+							{this.tags()}
 						</div>
 					</div>
 					<div style={ style.formInputs }>
@@ -106,12 +112,6 @@ class ContactForm extends Component{
 								value={ user.description }
 								onChange={ this.handleChange.bind(this) }>
 							</textarea>
-						</div>
-					</div>
-					<div style={ style.formInputs }>
-						<div style={ style.formInputContainer }>
-							<label style={ style.label } htmlFor="tags">Associez des tags</label>
-							{this.tags()}
 						</div>
 					</div>
 					<div style={ style.formInputs }>
@@ -169,17 +169,20 @@ class ContactForm extends Component{
 				border: '1px solid #efefef',
 				marginBottom: 15,
 				padding: 15,
+				flexWrap: 'wrap',
 			},
 			formInputContainer: {
 				display: 'flex',
 				alignItems: 'center',
 				flex: 1,
-				margin: '10px'
+				margin: '10px',
+				flexWrap: 'wrap',
 			},
 			forminput: {
 				padding: 10,
 				flex: 1,
 				border: '1px solid #eee',
+				flexWrap: 'wrap',
 			},
 			label: {
 				marginRight: 10,

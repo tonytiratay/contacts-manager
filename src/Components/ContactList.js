@@ -7,6 +7,10 @@ class ContactList extends Component {
 		this.props.onToggleContactNew('new')
 	}
 
+	handleContactClick(contact){
+		this.props.onClick(contact)
+	}
+
 	render(){
 		const { contacts } = this.props;
 		let style = this.style();
@@ -15,7 +19,7 @@ class ContactList extends Component {
 				<div style={style.button} onClick={this.handleToggleContactNew.bind(this)}>Nouveau Contact</div>
 				{ contacts.map((contact, index)=>{
 					return (
-						<ContactItem contact={contact} key={contact.id} index={index}/>
+						<ContactItem contact={contact} key={contact.id} index={index} onClick={this.handleContactClick.bind(this, contact)}/>
 					)
 				}) }
 			</div>
