@@ -79,7 +79,6 @@ class ContactForm extends Component{
 						<div style={ style.formInputContainer }>
 							<label style={ style.label } htmlFor="name">Nom</label>
 							<input 
-								required
 								style={ style.forminput }
 								id="name"
 								name="name"
@@ -89,7 +88,6 @@ class ContactForm extends Component{
 						<div style={ style.formInputContainer }>
 							<label style={ style.label } htmlFor="company">Entreprise</label>
 							<input 
-								required
 								style={ style.forminput }
 								id="company"
 								name="company"
@@ -99,7 +97,6 @@ class ContactForm extends Component{
 						<div style={ style.formInputContainer }>
 							<label style={ style.label } htmlFor="email">Email</label>
 							<input 
-								required
 								style={ style.forminput }
 								id="email"
 								name="email"
@@ -139,8 +136,8 @@ class ContactForm extends Component{
 	style(){
 		return {
 			container: {
-				maxWidth: '960px',
-				margin: 'auto',
+				flex: 1,
+				padding: 20
 			},
 			title: {
 				fontWeight: 300,

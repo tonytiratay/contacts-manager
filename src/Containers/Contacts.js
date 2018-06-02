@@ -51,7 +51,7 @@ class Contacts extends Component {
 		switch (this.state.activeView) {
 			case "new":
 				return (
-					<div style={{ maxWidth: 960, margin: 'auto' }}>
+					<div>
 						<ContactForm setView={this.setView.bind(this)} tags={this.state.tags} onSave={this.saveUser.bind(this)}/>
 					</div>
 				)
@@ -74,7 +74,7 @@ class Contacts extends Component {
 			<div>
 				<header style={style.header}>
 		          <img src={logo} className="App-logo" alt="logo" />
-		          <h1 className="App-title">REACT Contact Manager</h1>
+		          <h1 className="App-title">Github Contact Manager</h1>
 		        </header>
 		        <div style={ style.container }>
 					<div style={ style.leftColumn }> {this.leftColumn()} </div>

@@ -10,7 +10,7 @@ class ContactDetailView extends Component {
 	render(){
 		let { user } = this.props;
 		if (user) {
-			let { firstName, lastName, avatar, phone, description, tags } = user;
+			let { name, avatar, phone, description, tags } = user;
 			let style = this.style();
 			return (
 				<div style={style.container}>
@@ -19,8 +19,7 @@ class ContactDetailView extends Component {
 							<div style={{...style.image, backgroundImage: `url(${avatar})`}}></div>
 						</div>
 						<div style={style.userInfo}>
-							<span style={style.firstName}>{firstName}</span>
-							<span style={style.lastName}>{lastName}</span>
+							<span style={style.name}>{name}</span>
 						</div>
 					</div>
 				</div>
@@ -35,13 +34,12 @@ class ContactDetailView extends Component {
 			container: {
 				display: 'flex',
 				flex: 1,
-				background: isEven(this.props.index) ? grey : '#fff',
+				padding: 20,
 			},
 			userContainer: {
 				display: 'flex',
 				flex: 1,
 				maxWidth: 700,
-				justifyContent: 'center',
 			},
 			imageContainer: {
 				display: 'flex',
@@ -57,21 +55,14 @@ class ContactDetailView extends Component {
 			},
 			userInfo: {
 				marginLeft: '10px',
-				justifySelf: 'center',
 				alignSelf: 'center',
 			},
-			firstName: {
+			name: {
 				fontSize: '30px',
 				color: "#333",
-				marginBottom: '-15px',
-				fontWeight: '600',
+				fontWeight: '300',
 				marginRight: 10,
 			},
-			lastName: {
-				fontSize: '36px',
-				color: "#333",
-				fontWeight: '300',
-			}
 		}
 	}
 }

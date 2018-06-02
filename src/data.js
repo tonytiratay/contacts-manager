@@ -1,10 +1,16 @@
 const contacts = [
 	{
 		createdAt: new Date(),
+		id: 7,
+		name: "Tony Tiratay",
+		githubName: 'tonytiratay',
+		avatar: 'https://placeimg.com/200/200/people?q=ahw',
+	},
+	{
+		createdAt: new Date(),
 		id: 1,
 		name: "John Doef",
 		lastName: '',
-		age: 33,
 		avatar: 'https://placeimg.com/200/200/people?q=a',
 	},
 	{
@@ -12,7 +18,6 @@ const contacts = [
 		id: 2,
 		name: "Arthur Durdêtrebébé",
 		lastName: '',
-		age: 33,
 		avatar: 'https://placeimg.com/200/200/people?q=efa',
 	},
 	{
@@ -20,7 +25,6 @@ const contacts = [
 		id: 3,
 		name: "Phill Atayli",
 		lastName: '',
-		age: 33,
 		avatar: 'https://placeimg.com/200/200/people?q=arth',
 	},
 	{
@@ -28,7 +32,6 @@ const contacts = [
 		id: 4,
 		name: "Jennyfer Harpacé",
 		lastName: '',
-		age: 33,
 		avatar: 'https://placeimg.com/200/200/people?q=ac',
 	},
 	{
@@ -36,7 +39,6 @@ const contacts = [
 		id: 5,
 		name: "Mathias De Traiflequipi Quetonkeur",
 		lastName: '',
-		age: 33,
 		avatar: 'https://placeimg.com/200/200/people?q=ajj',
 	},
 	{
@@ -44,7 +46,6 @@ const contacts = [
 		id: 6,
 		name: "Tony Stwarébidon",
 		lastName: '',
-		age: 33,
 		avatar: 'https://placeimg.com/200/200/people?q=asa',
 	},
 ];
