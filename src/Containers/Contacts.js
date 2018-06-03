@@ -49,16 +49,15 @@ class Contacts extends Component {
 	}
 
 	handleEditUserInfo(userProps){
-		console.log(userProps)
 		let { userSelected, contactList } = this.state;
+		console.log('user props: ', userProps)
 		let newUser = { ...userSelected, ...userProps };
-		console.log(newUser)
 		this.setState({ userSelected: newUser });
 		let newContactList = contactList.map((c) => {
-			return c.id == newUser.id ? newUser : c;
+			return c.id === newUser.id ? newUser : c;
 		});
-		console.log(newContactList)
 		this.setState({ contactList: newContactList });
+		console.log(newUser, this.state)
 	}
 
 	rightColumn(){

@@ -11,12 +11,12 @@ class ContactDetailView extends Component {
 
 	handleEdit(e){
 		e.preventDefault();
-		this.props.handleEditUserInfo({ [e.target.name]: e.target.value })
+		let { name, value } = e.target;
+		this.props.handleEditUserInfo({ [name]: value })
 	}
 
 	tags(){
 		let { tags, user } = this.props;
-		console.log(user)
 		return <SelectTag options={tags} value={user.tags} addTag={this.addTag.bind(this)} removeTag={this.removeTag.bind(this)}/>
 	}
 
@@ -30,15 +30,16 @@ class ContactDetailView extends Component {
 		function findTag(elem, tagToFind) {
 		  return elem === tagToFind;
 		}
-		let index = tags.findIndex(findTag.bind(this, tag))
-		let newTags = tags.splice(index, 1);
+		let index = tags.findIndex(findTag.bind(this, tag));
+		let newTags = [...tags];
+		newTags.splice(index, 1);
 		this.props.handleEditUserInfo({ tags: newTags });
 	}
 
 	render(){
 		let { user } = this.props;
 		if (user) {
-			let { name, avatar, company, email, githubName, hireable, tags } = user;
+			let { name, avatar, company, email, githubName, hireable, tags } = this.props.user;
 			let style = this.style();
 			return (
 				<div style={style.container}>
@@ -70,6 +71,14 @@ class ContactDetailView extends Component {
 									name="email"
 									onChange={this.handleEdit.bind(this)}
 									value={email}/>
+							</div>
+							<div><b>ProfilGithub: </b>
+								<input 
+									style={style.inputCompany} 
+									type="text" 
+									name="githubName"
+									onChange={this.handleEdit.bind(this)}
+									value={githubName || 'non renseigné'}/>
 							</div>
 						</div>
 					</div>

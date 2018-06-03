@@ -7,7 +7,7 @@ const blankUser = {
 	name: '',
 	company: '',
 	email: '',
-	hireable: '',
+	hireable: false,
 	avatar: 'https://placeimg.com/200/200/people',
 	githubName: '',
 	tags: []
@@ -26,8 +26,9 @@ class ContactForm extends Component{
 
 	handleChange(e){
 		let updateUser = { ...this.state.user };
-		let { value, name } = e.target;
-		updateUser[name] = name === 'tags' ? [value] : value;
+		let { value, name, checked } = e.target;
+		updateUser[name] =  name === 'tags' ? [value] : value;
+		console.log(updateUser.hireable)
 		this.setState({ user: updateUser });
 	}
 
@@ -112,19 +113,6 @@ class ContactForm extends Component{
 						<div style={ style.formInputContainer }>
 							<div><label style={ style.label } htmlFor="tags">Associez des tags</label></div>
 							{this.tags()}
-						</div>
-					</div>
-					<div style={ style.formInputs }>
-						<div style={ style.formInputContainer }>
-							<label style={ style.label } htmlFor="hireable">Embauchable</label>
-							<input 
-								type="checkbox"
-								required
-								style={ style.forminput }
-								id="hireable"
-								name="hireable"
-								value={ user.hireable }
-								onChange={ this.handleChange.bind(this) }/>
 						</div>
 					</div>
 					<div style={ style.formInputs }>
