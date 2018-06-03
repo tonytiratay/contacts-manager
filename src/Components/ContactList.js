@@ -21,7 +21,7 @@ class ContactList extends Component {
 				</div>
 				{ contacts.map((contact, index)=>{
 					return (
-						<div style={ style.item }>
+						<div style={ style.item } key={contact.id}>
 							<ContactItem contact={contact} key={contact.id} index={index} onClick={this.handleContactClick.bind(this, contact)}/>
 						</div>
 					)

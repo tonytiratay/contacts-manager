@@ -60,6 +60,7 @@ class SelectTag extends Component {
 			container: {
 				display: 'flex',
 				flex: 1,
+				flexWrap: 'wrap',
 			},
 			selector: {
 				flex: 1,
@@ -70,9 +71,13 @@ class SelectTag extends Component {
 				minWidth: 250,
 			},
 			selectable: {
+				flex: 1,
 				cursor: 'pointer',
 				padding: 5,
-			}
+			},
+			selected: {
+				flex: 1,
+			},
 		}
 	}
 }

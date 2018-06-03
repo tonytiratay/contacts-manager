@@ -20,6 +20,7 @@ class Contactitem extends Component {
 					<div style={style.userInfo}>
 						<div style={style.nameContainer}>
 							<h3 style={style.name}>{contact.name}</h3>
+							<h3 style={style.company}>{contact.company}</h3>
 						</div>
 					</div>
 				</div>
@@ -61,10 +62,14 @@ class Contactitem extends Component {
 				color: '#ddd',
 			},
 			nameContainer: {
-				display: 'flex',
 				flex: 1,
 			},
 			name: {
+				fontSize: '18px',
+				fontWeight: '300',
+				marginBottom: -10,
+			},
+			company: {
 				fontSize: '14px',
 				fontWeight: '300',
 			},

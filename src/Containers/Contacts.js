@@ -48,6 +48,19 @@ class Contacts extends Component {
 		)
 	}
 
+	handleEditUserInfo(userProps){
+		console.log(userProps)
+		let { userSelected, contactList } = this.state;
+		let newUser = { ...userSelected, ...userProps };
+		console.log(newUser)
+		this.setState({ userSelected: newUser });
+		let newContactList = contactList.map((c) => {
+			return c.id == newUser.id ? newUser : c;
+		});
+		console.log(newContactList)
+		this.setState({ contactList: newContactList });
+	}
+
 	rightColumn(){
 		switch (this.state.activeView) {
 			case "new":
@@ -60,7 +73,7 @@ class Contacts extends Component {
 			case "view":
 				return (
 					<div style={{ display: 'flex', flex: 1, }}>
-						<ContactDetailView user={this.state.userSelected}/>
+						<ContactDetailView user={this.state.userSelected} handleEditUserInfo={this.handleEditUserInfo.bind(this)}/>
 					</div>
 				)
 			break;
@@ -113,15 +126,15 @@ class Contacts extends Component {
 				flex: 1,
 				minWidth: 250,
 				background: '#333',
-				height: '100%',
 				overflowY: 'scroll',
+				minWidth: 250,
 			},
 			rightColumn: {
 				display: 'flex',
 				flex: 1,
-				minWidth: 250,
-				height: '100%',
 				overflowY: 'scroll',
+				minWidth: 300,
+
 			}
 		};
 	}

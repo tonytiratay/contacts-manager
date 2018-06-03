@@ -67,7 +67,7 @@ class ContactForm extends Component{
 		return(
 			<div style={style.container}>
 			<h1 style={style.title}>Créer un nouveau contact</h1>
-				<form onSubmit = { this.handleSubmit.bind(this) }>
+				<form  style={ style.form } onSubmit = { this.handleSubmit.bind(this) }>
 					<div style={ style.formInputs }>
 						<div style={ style.formInputContainer }>
 							<label style={ style.label } htmlFor="githubName">Nom github</label>
@@ -110,7 +110,7 @@ class ContactForm extends Component{
 					</div>
 					<div style={ style.formInputs }>
 						<div style={ style.formInputContainer }>
-							<label style={ style.label } htmlFor="tags">Associez des tags</label>
+							<div><label style={ style.label } htmlFor="tags">Associez des tags</label></div>
 							{this.tags()}
 						</div>
 					</div>
@@ -142,6 +142,11 @@ class ContactForm extends Component{
 			container: {
 				flex: 1,
 				padding: 20
+			},
+			form: {
+				display: 'flex',
+				flex: 1,
+				flexDirection: 'column',
 			},
 			title: {
 				fontWeight: 300,
@@ -179,6 +184,7 @@ class ContactForm extends Component{
 				flex: 1,
 				margin: '10px',
 				flexWrap: 'wrap',
+				flexDirection: 'column',
 			},
 			forminput: {
 				padding: 10,

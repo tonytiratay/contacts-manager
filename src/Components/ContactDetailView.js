@@ -7,6 +7,12 @@ let isEven = (num) => {
 const grey = "#efefef";
 
 class ContactDetailView extends Component {
+
+	handleEdit(e){
+		e.preventDefault();
+		this.props.handleEditUserInfo({ [e.target.name]: e.target.value })
+	}
+
 	render(){
 		let { user } = this.props;
 		if (user) {
@@ -19,9 +25,30 @@ class ContactDetailView extends Component {
 							<div style={{...style.image, backgroundImage: `url(${avatar})`}}></div>
 						</div>
 						<div style={style.userInfo}>
-							<div style={style.name}>{name}</div>
-							<div style={style.company}><b>Travail chez: </b>{company}</div>
-							<div style={style.email}><b>Adresse mail: </b>{email}</div>
+							<div>
+								<input 
+									style={style.inputName} 
+									type="text" 
+									name="name"
+									onChange={this.handleEdit.bind(this)}
+									value={name}/>
+							</div>
+							<div><b>Travail chez: </b>
+								<input 
+									style={style.inputCompany} 
+									type="text" 
+									name="company"
+									onChange={this.handleEdit.bind(this)}
+									value={company}/>
+							</div>
+							<div><b>Adresse mail: </b>
+								<input 
+									style={style.inputCompany} 
+									type="text" 
+									name="email"
+									onChange={this.handleEdit.bind(this)}
+									value={email}/>
+							</div>
 						</div>
 					</div>
 					<div style={style.infos}>
@@ -76,6 +103,16 @@ class ContactDetailView extends Component {
 				color: "#333",
 				fontWeight: '300',
 				marginRight: 10,
+			},
+			inputName: {
+				fontSize: '30px',
+				color: "#333",
+				fontWeight: '300',
+				border: 'none',
+			},
+			inputCompany: {
+				border: 'none',
+				fontSize: 14,
 			},
 			company: {
 				lineHeight: 2,
