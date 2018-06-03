@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import logo from '../logo.svg';
 import '../App.css';
+import faker from 'faker';
 
 import data from '../data.js';
 import ContactList from '../Components/ContactList'
 import ContactForm from '../Components/ContactForm';
 import ContactDetailView from '../Components/ContactDetailView';
 import Home from '../Components/Home';
+
 
 class Contacts extends Component {
 	constructor(){
@@ -17,6 +19,19 @@ class Contacts extends Component {
 			activeView: 'home',
 			userSelected: false,
 		};
+	}
+
+	blankUser(){
+		return {
+			id: faker.internet.password(),
+			name: '',
+			company: '',
+			email: '',
+			hireable: false,
+			avatar: 'https://placeimg.com/200/200/people',
+			githubName: '',
+			tags: []
+		}
 	}
 
 	setView(name){
@@ -63,9 +78,10 @@ class Contacts extends Component {
 	rightColumn(){
 		switch (this.state.activeView) {
 			case "new":
+				this.saveUser(this.blankUser());
 				return (
 					<div style={{ display: 'flex', flex: 1, }}>
-						<ContactForm setView={this.setView.bind(this)} tags={this.state.tags} onSave={this.saveUser.bind(this)}/>
+						<ContactDetailView user={this.state.userSelected} handleEditUserInfo={this.handleEditUserInfo.bind(this)} tags={this.state.tags}/>
 					</div>
 				)
 			break;

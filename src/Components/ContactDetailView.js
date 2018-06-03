@@ -54,25 +54,25 @@ class ContactDetailView extends Component {
 									type="text" 
 									name="name"
 									onChange={this.handleEdit.bind(this)}
-									value={name}/>
+									value={name || 'non renseigné'}/>
 							</div>
-							<div><b>Travail chez: </b>
+							<div><b style={style.label}>Travail chez: </b>
 								<input 
 									style={style.inputCompany} 
 									type="text" 
 									name="company"
 									onChange={this.handleEdit.bind(this)}
-									value={company}/>
+									value={company || 'non renseigné'}/>
 							</div>
-							<div><b>Adresse mail: </b>
+							<div><b style={style.label}>Adresse mail: </b>
 								<input 
 									style={style.inputCompany} 
 									type="text" 
 									name="email"
 									onChange={this.handleEdit.bind(this)}
-									value={email}/>
+									value={email || 'non renseigné'}/>
 							</div>
-							<div><b>ProfilGithub: </b>
+							<div><b style={style.label}>Profil Github: </b>
 								<input 
 									style={style.inputCompany} 
 									type="text" 
@@ -175,8 +175,9 @@ class ContactDetailView extends Component {
 				flexWrap: 'wrap',
 			},
 			label: {
-				marginRight: 10,
+				marginRight: 5,
 				color: '#666',
+				fontSize: 13,
 			}
 		}
 	}

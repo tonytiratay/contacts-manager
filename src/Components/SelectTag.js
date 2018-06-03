@@ -79,6 +79,7 @@ class SelectTag extends Component {
 				flex: 1,
 				padding: 6,
 				borderLeft: '3px solid #bdf2ae',
+				cursor: 'pointer',
 			},
 		}
 	}
