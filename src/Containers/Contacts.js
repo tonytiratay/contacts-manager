@@ -112,12 +112,16 @@ class Contacts extends Component {
 				display: 'flex',
 				flex: 1,
 				minWidth: 250,
-				background: '#333'
+				background: '#333',
+				height: '100%',
+				overflowY: 'scroll',
 			},
 			rightColumn: {
 				display: 'flex',
-				flex: 4,
+				flex: 1,
 				minWidth: 250,
+				height: '100%',
+				overflowY: 'scroll',
 			}
 		};
 	}

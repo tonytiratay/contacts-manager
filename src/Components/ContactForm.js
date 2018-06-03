@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import SelectTag from './SelectTag';
+import faker from 'faker';
 
 const blankUser = {
+	id: faker.internet.password(),
 	name: '',
 	company: '',
 	email: '',
