@@ -25,6 +25,11 @@ class ContactDetailView extends Component {
 		this.props.handleEditUserInfo({ tags: [...newUser.tags, tag] })
 	}
 
+	deleteContact(contactId){
+		console.log('id: ', contactId);
+		window.confirm("Êtes vous sur de vouloir effacer ce contact ?") ? this.props.deleteContact(contactId) : false;
+	}
+
 	removeTag(tag){
 		let tags = this.props.user.tags;
 		function findTag(elem, tagToFind) {
@@ -39,7 +44,7 @@ class ContactDetailView extends Component {
 	render(){
 		let { user } = this.props;
 		if (user) {
-			let { name, avatar, company, email, githubName, hireable, tags } = this.props.user;
+			let { name, avatar, company, email, githubName, hireable, tags, id } = this.props.user;
 			let style = this.style();
 			return (
 				<div style={style.container}>
@@ -81,6 +86,9 @@ class ContactDetailView extends Component {
 									value={githubName || 'non renseigné'}/>
 							</div>
 						</div>
+						<div>
+							<div style={ style.button} onClick={this.deleteContact.bind(this, id)}>Supprimer</div>
+						</div>
 					</div>
 					<div style={style.infos}>
 						<div style={ style.formInputs }>
@@ -111,6 +119,17 @@ class ContactDetailView extends Component {
 				display: 'flex',
 				alignItems: 'flex-start',
 				justifyItems: 'flex-start',
+			},
+			button: {
+				flex: 1,
+				padding: 10,
+				margin: '10px',
+				background: '#ff0000',
+				color: '#fff',
+				height: '17px',
+				borderRadius: 10,
+				textAlign: 'center',
+				cursor: 'pointer',
 			},
 			infos: {
 				flex: 1, display: 'flex',

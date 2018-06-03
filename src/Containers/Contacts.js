@@ -75,20 +75,41 @@ class Contacts extends Component {
 		console.log(newUser, this.state)
 	}
 
+	deleteContact(id){
+		let { contactList } = this.state;
+		function findContact(id, elem) {
+		  return elem.id === id;
+		}
+		let index = contactList.findIndex(findContact.bind(this, id))
+		console.log(index);
+		let newContacts = contactList;
+		newContacts.splice(index, 1);
+		console.log(newContacts)
+		this.setState({ contactList: newContacts, activeView: 'home', userSelected: false });
+	}
+
 	rightColumn(){
 		switch (this.state.activeView) {
 			case "new":
 				this.saveUser(this.blankUser());
 				return (
 					<div style={{ display: 'flex', flex: 1, }}>
-						<ContactDetailView user={this.state.userSelected} handleEditUserInfo={this.handleEditUserInfo.bind(this)} tags={this.state.tags}/>
+						<ContactDetailView 
+							user={this.state.userSelected} 
+							deleteContact={this.deleteContact.bind(this)}
+							handleEditUserInfo={this.handleEditUserInfo.bind(this)} 
+							tags={this.state.tags}/>
 					</div>
 				)
 			break;
 			case "view":
 				return (
 					<div style={{ display: 'flex', flex: 1, }}>
-						<ContactDetailView user={this.state.userSelected} handleEditUserInfo={this.handleEditUserInfo.bind(this)} tags={this.state.tags}/>
+						<ContactDetailView 
+							user={this.state.userSelected} 
+							deleteContact={this.deleteContact.bind(this)}
+							handleEditUserInfo={this.handleEditUserInfo.bind(this)} 
+							tags={this.state.tags}/>
 					</div>
 				)
 			break;
