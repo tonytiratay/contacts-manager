@@ -6,6 +6,7 @@ import data from '../data.js';
 import ContactList from '../Components/ContactList'
 import ContactForm from '../Components/ContactForm';
 import ContactDetailView from '../Components/ContactDetailView';
+import Home from '../Components/Home';
 
 class Contacts extends Component {
 	constructor(){
@@ -13,7 +14,7 @@ class Contacts extends Component {
 		this.state = {
 			contactList: data.contacts,
 			tags: data.tags,
-			activeView: 'new',
+			activeView: 'home',
 			userSelected: false,
 		};
 	}
@@ -41,7 +42,7 @@ class Contacts extends Component {
 
 	leftColumn(){
 		return(
-			<div>
+			<div style={{ display: 'flex', flex: 1, }}>
 				<ContactList contacts={this.state.contactList} onToggleContactNew={this.setView.bind(this)} onClick={this.handleContactClick.bind(this)}/>
 			</div>
 		)
@@ -51,7 +52,7 @@ class Contacts extends Component {
 		switch (this.state.activeView) {
 			case "new":
 				return (
-					<div>
+					<div style={{ display: 'flex', flex: 1, }}>
 						<ContactForm setView={this.setView.bind(this)} tags={this.state.tags} onSave={this.saveUser.bind(this)}/>
 					</div>
 				)
@@ -63,6 +64,13 @@ class Contacts extends Component {
 					</div>
 				)
 			break;
+			case "home":
+				return (
+					<div style={{ display: 'flex', flex: 1, }}>
+						<Home/>
+					</div>
+				)
+			break;
 			default: 
         		return ( <div>Cliquez sur un contact</div> );
 		}
@@ -71,10 +79,10 @@ class Contacts extends Component {
 	render(){
 		const style = this.style()
 		return(
-			<div>
-				<header style={style.header}>
+			<div style={{ flex: 1, display: 'flex', flexDirection: 'column', height: '100%' }}>
+				<header style={style.header} onClick={this.setView.bind(this, 'home')}>
 		          <img src={logo} className="App-logo" alt="logo" />
-		          <h1 className="App-title">Github Contact Manager</h1>
+		          <h1 className="App-title">GITHUB CONTACT MANAGER</h1>
 		        </header>
 		        <div style={ style.container }>
 					<div style={ style.leftColumn }> {this.leftColumn()} </div>
@@ -101,10 +109,13 @@ class Contacts extends Component {
 				flexWrap: 'wrap',
 			},
 			leftColumn: {
+				display: 'flex',
 				flex: 1,
 				minWidth: 250,
+				background: '#eee'
 			},
 			rightColumn: {
+				display: 'flex',
 				flex: 4,
 				minWidth: 250,
 			}

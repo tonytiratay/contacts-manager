@@ -6,9 +6,9 @@ import Contacts from './Containers/Contacts'
 class App extends Component {
   render() {
     return (
-      <div className="App">
+      <div className="App" style={{ flex: 1 }} >
         
-        <div className="contacts">
+        <div className="contacts" style={{ flex: 1 }} >
           <Contacts />
         </div>
       </div>

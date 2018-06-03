@@ -10,7 +10,7 @@ class ContactDetailView extends Component {
 	render(){
 		let { user } = this.props;
 		if (user) {
-			let { name, avatar, phone, description, tags } = user;
+			let { name, avatar, company, email, githubName, hireable, tags } = user;
 			let style = this.style();
 			return (
 				<div style={style.container}>
@@ -19,8 +19,13 @@ class ContactDetailView extends Component {
 							<div style={{...style.image, backgroundImage: `url(${avatar})`}}></div>
 						</div>
 						<div style={style.userInfo}>
-							<span style={style.name}>{name}</span>
+							<div style={style.name}>{name}</div>
+							<div style={style.company}><b>Travail chez: </b>{company}</div>
+							<div style={style.email}><b>Adresse mail: </b>{email}</div>
 						</div>
+					</div>
+					<div style={style.infos}>
+						
 					</div>
 				</div>
 			)
@@ -35,15 +40,24 @@ class ContactDetailView extends Component {
 				display: 'flex',
 				flex: 1,
 				padding: 20,
+				alignItems: 'flex-start',
+				justifyItems: 'flex-start',
+				flexDirection: 'column',
 			},
 			userContainer: {
 				display: 'flex',
-				flex: 1,
-				maxWidth: 700,
+				alignItems: 'flex-start',
+				justifyItems: 'flex-start',
+			},
+			infos: {
+				flex: 1, display: 'flex',
+				marginTop: 20,
+
 			},
 			imageContainer: {
 				display: 'flex',
 				marginLeft: '10px',
+				marginRight: '10px',
 			},
 			image: {
 				width: '100px',
@@ -62,6 +76,9 @@ class ContactDetailView extends Component {
 				color: "#333",
 				fontWeight: '300',
 				marginRight: 10,
+			},
+			company: {
+				lineHeight: 2,
 			},
 		}
 	}

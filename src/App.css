@@ -1,4 +1,8 @@
 
+body, html, #root, .App, .contacts {
+  height: 100%;
+}
+
 .App {
   text-align: center;
 }

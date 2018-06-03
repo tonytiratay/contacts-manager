@@ -19,7 +19,7 @@ class ContactForm extends Component{
 	}
 
 	handleClose(){
-		this.props.setView('list');
+		this.props.setView('home');
 	}
 
 	handleChange(e){
@@ -49,7 +49,9 @@ class ContactForm extends Component{
 
 	handleSubmit(e){
 		e.preventDefault();
-		this.props.onSave(this.state.user);
+		let { user } = this.state;
+		user.avatar ? false : user.avatar = 'https://placeimg.com/200/200/people?q=' + new Date();
+		this.props.onSave(user);
 	}
 
 	tags(){
