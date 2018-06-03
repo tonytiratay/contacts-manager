@@ -108,9 +108,9 @@ class Contacts extends Component {
 		const style = this.style()
 		return(
 			<div style={{ flex: 1, display: 'flex', flexDirection: 'column', height: '100%' }}>
-				<header style={style.header} onClick={this.setView.bind(this, 'home')}>
-		          <img src={logo} className="App-logo" alt="logo" />
-		          <h1 className="App-title">GITHUB<br/>CONTACT MANAGER</h1>
+				<header style={style.header}>
+		          <img style={style.cursor} src={logo} className="App-logo" alt="logo" onClick={this.setView.bind(this, 'home')}/>
+		          <h1 style={style.cursor} className="App-title" onClick={this.setView.bind(this, 'home')}>GITHUB<br/>CONTACT MANAGER</h1>
 		        </header>
 		        <div style={ style.container }>
 					<div style={ style.leftColumn }> {this.leftColumn()} </div>
@@ -129,6 +129,8 @@ class Contacts extends Component {
 				height: '100px',
 				padding: '20px',
 				color: 'white',
+			},
+			cursor: {
 				cursor: 'pointer',
 			},
 			container: {
