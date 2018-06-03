@@ -86,7 +86,7 @@ class ContactDetailView extends Component {
 									value={githubName || 'non renseigné'}/>
 							</div>
 						</div>
-						<div>
+						<div style={style.delete}>
 							<div style={ style.button} onClick={this.deleteContact.bind(this, id)}>Supprimer</div>
 						</div>
 					</div>
@@ -111,8 +111,6 @@ class ContactDetailView extends Component {
 				display: 'flex',
 				flex: 1,
 				padding: 20,
-				alignItems: 'flex-start',
-				justifyItems: 'flex-start',
 				flexDirection: 'column',
 			},
 			userContainer: {
@@ -152,6 +150,10 @@ class ContactDetailView extends Component {
 			userInfo: {
 				marginLeft: '10px',
 				alignSelf: 'center',
+			},
+			delete: {
+				display: 'flex',
+				justifyItems: 'flex-end',
 			},
 			name: {
 				fontSize: '30px',
