@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import SelectTag from './SelectTag';
 
 let isEven = (num) => {
 	return num % 2 === 0
@@ -11,6 +12,27 @@ class ContactDetailView extends Component {
 	handleEdit(e){
 		e.preventDefault();
 		this.props.handleEditUserInfo({ [e.target.name]: e.target.value })
+	}
+
+	tags(){
+		let { tags, user } = this.props;
+		console.log(user)
+		return <SelectTag options={tags} value={user.tags} addTag={this.addTag.bind(this)} removeTag={this.removeTag.bind(this)}/>
+	}
+
+	addTag(tag){
+		let newUser = this.props.user;
+		this.props.handleEditUserInfo({ tags: [...newUser.tags, tag] })
+	}
+
+	removeTag(tag){
+		let tags = this.props.user.tags;
+		function findTag(elem, tagToFind) {
+		  return elem === tagToFind;
+		}
+		let index = tags.findIndex(findTag.bind(this, tag))
+		let newTags = tags.splice(index, 1);
+		this.props.handleEditUserInfo({ tags: newTags });
 	}
 
 	render(){
@@ -52,7 +74,12 @@ class ContactDetailView extends Component {
 						</div>
 					</div>
 					<div style={style.infos}>
-						
+						<div style={ style.formInputs }>
+							<div style={ style.formInputContainer }>
+								<div><label style={ style.label } htmlFor="tags">Tags associés</label></div>
+								{this.tags()}
+							</div>
+						</div>
 					</div>
 				</div>
 			)
@@ -117,6 +144,31 @@ class ContactDetailView extends Component {
 			company: {
 				lineHeight: 2,
 			},
+			formInputs: {
+				display: 'flex',
+				border: '1px solid #efefef',
+				marginBottom: 15,
+				padding: 15,
+				flexWrap: 'wrap',
+			},
+			formInputContainer: {
+				display: 'flex',
+				alignItems: 'center',
+				flex: 1,
+				margin: '10px',
+				flexWrap: 'wrap',
+				flexDirection: 'column',
+			},
+			forminput: {
+				padding: 10,
+				flex: 1,
+				border: '1px solid #eee',
+				flexWrap: 'wrap',
+			},
+			label: {
+				marginRight: 10,
+				color: '#666',
+			}
 		}
 	}
 }

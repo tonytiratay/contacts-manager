@@ -21,7 +21,7 @@ class SelectTag extends Component {
 			<div style={this.style().selector}>
 				{ this.props.value.map((tag)=>{
 				return (
-					<div  style={this.style().selectable} key={tag} onClick={ this.removeTag.bind(this, tag) }>
+					<div  style={this.style().selected} key={tag} onClick={ this.removeTag.bind(this, tag) }>
 						{tag}
 					</div>
 				)
@@ -77,6 +77,8 @@ class SelectTag extends Component {
 			},
 			selected: {
 				flex: 1,
+				padding: 6,
+				borderLeft: '3px solid #bdf2ae',
 			},
 		}
 	}

@@ -73,7 +73,7 @@ class Contacts extends Component {
 			case "view":
 				return (
 					<div style={{ display: 'flex', flex: 1, }}>
-						<ContactDetailView user={this.state.userSelected} handleEditUserInfo={this.handleEditUserInfo.bind(this)}/>
+						<ContactDetailView user={this.state.userSelected} handleEditUserInfo={this.handleEditUserInfo.bind(this)} tags={this.state.tags}/>
 					</div>
 				)
 			break;
