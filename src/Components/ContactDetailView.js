@@ -170,6 +170,7 @@ class ContactDetailView extends Component {
 			inputCompany: {
 				border: 'none',
 				fontSize: 14,
+				marginLeft: 10,
 			},
 			company: {
 				lineHeight: 2,
