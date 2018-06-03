@@ -41,16 +41,6 @@ const contacts = [
 	},
 	{
 		createdAt: new Date(),
-		id: 5,
-		company: 'Leikir',
-		name: "Mathias De Traiflequipi Quetonkeur",
-		hireable: true,
-		email: 'monmail@me.com',
-		githubName: false,
-		avatar: 'https://placeimg.com/200/200/people?q=ajj',
-	},
-	{
-		createdAt: new Date(),
 		id: 6,
 		company: 'Leikir',
 		name: "Tony Stwarébidon",

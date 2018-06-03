@@ -82,7 +82,7 @@ class Contacts extends Component {
 			<div style={{ flex: 1, display: 'flex', flexDirection: 'column', height: '100%' }}>
 				<header style={style.header} onClick={this.setView.bind(this, 'home')}>
 		          <img src={logo} className="App-logo" alt="logo" />
-		          <h1 className="App-title">GITHUB CONTACT MANAGER</h1>
+		          <h1 className="App-title">GITHUB<br/>CONTACT MANAGER</h1>
 		        </header>
 		        <div style={ style.container }>
 					<div style={ style.leftColumn }> {this.leftColumn()} </div>
@@ -97,7 +97,7 @@ class Contacts extends Component {
 			header: {
 				display: 'flex',
 				alignItems: 'center',
-				backgroundColor: '#18819b',
+				backgroundColor: '#222',
 				height: '100px',
 				padding: '20px',
 				color: 'white',
@@ -112,7 +112,7 @@ class Contacts extends Component {
 				display: 'flex',
 				flex: 1,
 				minWidth: 250,
-				background: '#eee'
+				background: '#333'
 			},
 			rightColumn: {
 				display: 'flex',

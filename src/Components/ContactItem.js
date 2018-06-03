@@ -18,7 +18,9 @@ class Contactitem extends Component {
 						<div style={{...style.image, backgroundImage: `url(${contact.avatar})`}}></div>
 					</div>
 					<div style={style.userInfo}>
-						<h3 style={style.name}>{contact.name}</h3>
+						<div style={style.nameContainer}>
+							<h3 style={style.name}>{contact.name}</h3>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -31,18 +33,18 @@ class Contactitem extends Component {
 				display: 'flex',
 				flex: 1,
 				padding: 10,
-				background: isEven(this.props.index) ? grey : '#fff',
+				background: isEven(this.props.index) ? '#555' : '#444',
 				alignItems: 'center',
 			},
 			userContainer: {
 				display: 'flex',
 				flex: 1,
-				background: isEven(this.props.index) ? grey : '#fff',
-				cursor: 'pointer'
+				background: isEven(this.props.index) ? '#555' : '#444',
+				cursor: 'pointer',
 			},
 			imageContainer: {
 				display: 'flex',
-				marginLeft: '10px',
+				marginLeft: '5px',
 			},
 			image: {
 				width: '50px',
@@ -53,12 +55,17 @@ class Contactitem extends Component {
 				border: isEven(this.props.index) ? '2px solid #fff' : '2px solid ' + grey,
 			},
 			userInfo: {
+				flex: 1,
 				marginLeft: '10px',
-				justifySelf: 'center',
+				alignItems: 'center',
+				color: '#ddd',
+			},
+			nameContainer: {
+				display: 'flex',
+				flex: 1,
 			},
 			name: {
-				fontSize: '15px',
-				color: "#333",
+				fontSize: '14px',
 				fontWeight: '300',
 			},
 		}

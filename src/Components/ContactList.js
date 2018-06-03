@@ -16,10 +16,14 @@ class ContactList extends Component {
 		let style = this.style();
 		return(
 			<div style={style.container}>
-				<div style={style.button} onClick={this.handleToggleContactNew.bind(this)}>Nouveau Contact</div>
+				<div style={style.buttonContainer}>
+					<div style={style.button} onClick={this.handleToggleContactNew.bind(this)}>Nouveau Contact</div>
+				</div>
 				{ contacts.map((contact, index)=>{
 					return (
-						<ContactItem contact={contact} key={contact.id} index={index} onClick={this.handleContactClick.bind(this, contact)}/>
+						<div style={ style.item }>
+							<ContactItem contact={contact} key={contact.id} index={index} onClick={this.handleContactClick.bind(this, contact)}/>
+						</div>
 					)
 				}) }
 			</div>
@@ -29,14 +33,27 @@ class ContactList extends Component {
 	style(){
 		return {
 			container: {
+				display: 'flex',
+				flex: 1,
+				flexDirection: 'column',
+				justifyItems: 'flex-start',
+			},
+			item: {
+				maxHeight: 90,
+			},
+			buttonContainer: {
+				padding: '15px 0',
 			},
 			button: {
-				padding: 15,
+				padding: 10,
 				background: '#48d611',
 				color: '#fff',
 				height: '17px',
 				textAlign: 'center',
-				cursor: 'pointer'
+				cursor: 'pointer',
+				borderRadius: 15,
+				maxWidth: 200,
+				margin: 'auto',
 			},
 			title: {
 				flex: 1,
