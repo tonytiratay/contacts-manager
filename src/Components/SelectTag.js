@@ -3,10 +3,7 @@ import { difference } from 'lodash';
 import style from '../style/selectTag';
 import PropTypes from 'prop-types';
 
-const filterSelected = (options, value) => {
-	let result = difference(options, value);
-	return result;
-};
+const filterSelected = (options, value) => difference(options, value);
 
 class SelectTag extends Component {
 
