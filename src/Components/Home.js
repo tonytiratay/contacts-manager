@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
+import style from '../style/home';
 
 class Home extends Component {
 	render(){
-		let style = this.style();
 		return (
 			<div style={ style.container }>
 				<div>
@@ -13,25 +13,6 @@ class Home extends Component {
 				</div>
 			</div>
 		);
-	}
-
-	style(){
-		return {
-			container: {
-				display: 'flex',
-				flex: 1,
-				justifyContent: 'center',
-				alignItems: 'center',
-			},
-			title: {
-				fontWeight: 300,
-				color: '#444',
-			},
-			image: {
-				maxWidth: 350,
-				justifySelf: 'center',
-			}
-		};
 	}
 }
 

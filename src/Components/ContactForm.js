@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import SelectTag from './SelectTag';
 import faker from 'faker';
+import style from '..style/contactForm'
 
 const blankUser = {
 	id: faker.internet.password(),
@@ -65,7 +66,6 @@ class ContactForm extends Component{
 	}
 
 	render(){
-		const style = this.style();
 		let { user } = this.state;
 		return(
 			<div style={style.container}>
@@ -125,67 +125,6 @@ class ContactForm extends Component{
 				</form>
 			</div>
 		);
-	}
-	style(){
-		return {
-			container: {
-				flex: 1,
-				padding: 20
-			},
-			form: {
-				display: 'flex',
-				flex: 1,
-				flexDirection: 'column',
-			},
-			title: {
-				fontWeight: 300,
-			},
-			buttonCancel: {
-				flex: 1,
-				padding: 15,
-				margin: '10px',
-				background: '#ff0000',
-				color: '#fff',
-				height: '17px',
-				textAlign: 'center',
-				cursor: 'pointer',
-			},
-			buttonConfirm: {
-				flex: 1,
-				padding: 15,
-				margin: '10px',
-				background: '#48d611',
-				color: '#fff',
-				height: '17px',
-				textAlign: 'center',
-				cursor: 'pointer',
-			},
-			formInputs: {
-				display: 'flex',
-				border: '1px solid #efefef',
-				marginBottom: 15,
-				padding: 15,
-				flexWrap: 'wrap',
-			},
-			formInputContainer: {
-				display: 'flex',
-				alignItems: 'center',
-				flex: 1,
-				margin: '10px',
-				flexWrap: 'wrap',
-				flexDirection: 'column',
-			},
-			forminput: {
-				padding: 10,
-				flex: 1,
-				border: '1px solid #eee',
-				flexWrap: 'wrap',
-			},
-			label: {
-				marginRight: 10,
-				color: '#666',
-			}
-		};
 	}
 }
 

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ContactItem from '../Components/ContactItem';
+import style from '../style/contactList';
 
 class ContactList extends Component {
 
@@ -13,7 +14,6 @@ class ContactList extends Component {
 
 	render(){
 		const { contacts } = this.props;
-		let style = this.style();
 		return(
 			<div style={style.container}>
 				<div style={style.buttonContainer}>
@@ -28,40 +28,6 @@ class ContactList extends Component {
 				}) }
 			</div>
 		);
-	}
-
-	style(){
-		return {
-			container: {
-				display: 'flex',
-				flex: 1,
-				flexDirection: 'column',
-				justifyItems: 'flex-start',
-			},
-			item: {
-				maxHeight: 90,
-			},
-			buttonContainer: {
-				padding: '15px 0',
-			},
-			button: {
-				padding: 10,
-				background: '#48d611',
-				color: '#fff',
-				height: '17px',
-				textAlign: 'center',
-				cursor: 'pointer',
-				borderRadius: 15,
-				maxWidth: 200,
-				margin: 'auto',
-			},
-			title: {
-				flex: 1,
-				fontWeight: 300,
-				paddingLeft: 15,
-
-			}
-		};
 	}
 }
 
