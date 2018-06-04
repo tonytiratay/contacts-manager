@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import SelectTag from './SelectTag';
 import faker from 'faker';
 import style from '..style/contactForm'
+import PropTypes from 'prop-types';
 
 const blankUser = {
 	id: faker.internet.password(),
@@ -126,6 +127,12 @@ class ContactForm extends Component{
 			</div>
 		);
 	}
+}
+
+ContactForm.propTypes = {
+	user: PropTypes.object,
+	tags: PropTypes.array,
+	onSave: PropTypes.func,
 }
 
 export default ContactForm

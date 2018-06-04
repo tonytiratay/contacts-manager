@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ContactItem from '../Components/ContactItem';
 import style from '../style/contactList';
+import PropTypes from 'prop-types';
 
 class ContactList extends Component {
 
@@ -29,6 +30,12 @@ class ContactList extends Component {
 			</div>
 		);
 	}
+}
+
+ContactList.propTypes = {
+	contacts: PropTypes.array,
+	onClick: PropTypes.func,
+	onToggleContactNew: PropTypes.func,
 }
 
 export default ContactList

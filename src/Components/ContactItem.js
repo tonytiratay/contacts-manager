@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import style from '../style/contactItem';
+import PropTypes from 'prop-types';
 
 const isEven = num =>  num % 2 === 0;
 const grey = "#efefef";
@@ -27,6 +28,10 @@ class Contactitem extends Component {
 			</div>
 		)
 	}
+}
+
+Contactitem.propTypes = {
+	contact: PropTypes.object,
 }
 
 export default Contactitem

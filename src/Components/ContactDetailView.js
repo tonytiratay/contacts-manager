@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import SelectTag from './SelectTag';
 import style from '../style/contactDetailView';
+import PropTypes from 'prop-types';
 
 const isEven = (num) => {
 	return num % 2 === 0
@@ -107,6 +108,13 @@ class ContactDetailView extends Component {
 			return <div>Pas d'utilisateur à afficher</div>;
 		}
 	}
+}
+
+ContactDetailView.propTypes = {
+	user: PropTypes.object,
+	tags: PropTypes.array,
+	handleEditUserInfo: PropTypes.func,
+	deleteContact: PropTypes.func,
 }
 
 export default ContactDetailView;

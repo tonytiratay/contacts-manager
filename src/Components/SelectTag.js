@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { difference } from 'lodash';
 import style from '../style/selectTag';
+import PropTypes from 'prop-types';
 
 const filterSelected = (options, value) => {
 	let result = difference(options, value);
@@ -54,6 +55,13 @@ class SelectTag extends Component {
 			</div>
 		);
 	}
+}
+
+SelectTag.propTypes = {
+	options: PropTypes.array,
+	value: PropTypes.array,
+	addTag: PropTypes.func,
+	removeTag: PropTypes.func,
 }
 
 export default SelectTag;
