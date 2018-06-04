@@ -12,7 +12,7 @@ class Home extends Component {
 					<h1 style={ style.title }>Gérez tous vos contacts Github</h1>
 				</div>
 			</div>
-		)
+		);
 	}
 
 	style(){
@@ -31,7 +31,7 @@ class Home extends Component {
 				maxWidth: 350,
 				justifySelf: 'center',
 			}
-		}
+		};
 	}
 }
 

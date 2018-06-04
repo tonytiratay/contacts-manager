@@ -3,17 +3,17 @@ import { difference } from 'lodash';
 
 const filterSelected = (options, value) => {
 	let result = difference(options, value);
-	return result
+	return result;
 };
 
 class SelectTag extends Component {
 
 	addTag(tag){
-		this.props.addTag(tag)
+		this.props.addTag(tag);
 	}
 
 	removeTag(tag){
-		this.props.removeTag(tag)
+		this.props.removeTag(tag);
 	}
 
 	selected(){
@@ -27,7 +27,7 @@ class SelectTag extends Component {
 				)
 			}) }
 			</div>
-		)
+		);
 	}
 
 	selectable(){
@@ -42,7 +42,7 @@ class SelectTag extends Component {
 				})
 				}
 			</div>
-		)
+		);
 	}
 
 	render(){
@@ -52,7 +52,7 @@ class SelectTag extends Component {
 				{ this.selectable() }
 				{ this.selected() }
 			</div>
-		)
+		);
 	}
 
 	style(){
@@ -81,7 +81,7 @@ class SelectTag extends Component {
 				borderLeft: '3px solid #bdf2ae',
 				cursor: 'pointer',
 			},
-		}
+		};
 	}
 }
 

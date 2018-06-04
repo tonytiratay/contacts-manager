@@ -11,17 +11,17 @@ class ContactDetailView extends Component {
 	handleEdit(e){
 		e.preventDefault();
 		let { name, value } = e.target;
-		this.props.handleEditUserInfo({ [name]: value })
+		this.props.handleEditUserInfo({ [name]: value });
 	}
 
 	tags(){
 		let { tags, user } = this.props;
-		return <SelectTag options={tags} value={user.tags} addTag={this.addTag.bind(this)} removeTag={this.removeTag.bind(this)}/>
+		return <SelectTag options={tags} value={user.tags} addTag={this.addTag.bind(this)} removeTag={this.removeTag.bind(this)}/>;
 	}
 
 	addTag(tag){
 		let newUser = this.props.user;
-		this.props.handleEditUserInfo({ tags: [...newUser.tags, tag] })
+		this.props.handleEditUserInfo({ tags: [...newUser.tags, tag] });
 	}
 
 	deleteContact(contactId){
@@ -99,9 +99,9 @@ class ContactDetailView extends Component {
 						</div>
 					</div>
 				</div>
-			)
+			);
 		} else {
-			return <div>Pas d'utilisateur à afficher</div>
+			return <div>Pas d'utilisateur à afficher</div>;
 		}
 	}
 

@@ -28,7 +28,7 @@ class ContactForm extends Component{
 		let updateUser = { ...this.state.user };
 		let { value, name } = e.target;
 		updateUser[name] =  name === 'tags' ? [value] : value;
-		console.log(updateUser.hireable)
+		console.log(updateUser.hireable);
 		this.setState({ user: updateUser });
 	}
 
@@ -43,11 +43,11 @@ class ContactForm extends Component{
 		let tags = this.state.user.tags;
 		function findTag(elem, tagToFind) {
 		  return elem === tagToFind;
-		}
-		let index = tags.findIndex(findTag.bind(this, tag))
+		};
+		let index = tags.findIndex(findTag.bind(this, tag));
 		// Remove tag
 		let newTags = tags.splice(index, 1);
-		console.log(newTags)
+		console.log(newTags);
 		this.setState({ user: {...this.state.user, tags}});
 	}
 
@@ -61,7 +61,7 @@ class ContactForm extends Component{
 
 	tags(){
 		let { tags } = this.props;
-		return <SelectTag options={tags} value={this.state.user.tags} addTag={this.addTag.bind(this)} removeTag={this.removeTag.bind(this)}/>
+		return <SelectTag options={tags} value={this.state.user.tags} addTag={this.addTag.bind(this)} removeTag={this.removeTag.bind(this)}/>;
 	}
 
 	render(){
@@ -124,7 +124,7 @@ class ContactForm extends Component{
 					</div>
 				</form>
 			</div>
-		)
+		);
 	}
 	style(){
 		return {
@@ -185,7 +185,7 @@ class ContactForm extends Component{
 				marginRight: 10,
 				color: '#666',
 			}
-		}
+		};
 	}
 }
 

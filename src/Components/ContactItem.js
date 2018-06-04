@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 
-const isEven = (num) => {
-	return num % 2 === 0
-};
+const isEven = num =>  num % 2 === 0;
 const grey = "#efefef";
 
 class Contactitem extends Component {
@@ -72,7 +70,7 @@ class Contactitem extends Component {
 				fontSize: '14px',
 				fontWeight: '300',
 			},
-		}
+		};
 	}
 }
 

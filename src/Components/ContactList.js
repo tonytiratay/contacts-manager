@@ -4,11 +4,11 @@ import ContactItem from '../Components/ContactItem';
 class ContactList extends Component {
 
 	handleToggleContactNew(){
-		this.props.onToggleContactNew('new')
+		this.props.onToggleContactNew('new');
 	}
 
 	handleContactClick(contact){
-		this.props.onClick(contact)
+		this.props.onClick(contact);
 	}
 
 	render(){
@@ -27,7 +27,7 @@ class ContactList extends Component {
 					)
 				}) }
 			</div>
-		)
+		);
 	}
 
 	style(){
@@ -61,7 +61,7 @@ class ContactList extends Component {
 				paddingLeft: 15,
 
 			}
-		}
+		};
 	}
 }
 

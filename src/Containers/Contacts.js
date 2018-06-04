@@ -30,17 +30,17 @@ class Contacts extends Component {
 			hireable: false,
 			avatar: 'https://placeimg.com/200/200/people',
 			githubName: '',
-			tags: []
+			tags: [],
 		}
 	}
 
 	setView(name){
-		this.setState({activeView: name})
+		this.setState({activeView: name});
 	}
 
 	saveUser(user){
 		let { contactList } = this.state;
-		contactList.push(user)
+		contactList.push(user);
 		this.setState({
 			contactList,
 			userSelected: user,
@@ -60,7 +60,7 @@ class Contacts extends Component {
 			<div style={{ display: 'flex', flex: 1, }}>
 				<ContactList contacts={this.state.contactList} onToggleContactNew={this.setView.bind(this)} onClick={this.handleContactClick.bind(this)}/>
 			</div>
-		)
+		);
 	}
 
 	handleEditUserInfo(userProps){
@@ -80,8 +80,8 @@ class Contacts extends Component {
 		// Find contact to delete in contact list
 		function findContact(id, elem) {
 		  return elem.id === id;
-		}
-		let index = contactList.findIndex(findContact.bind(this, id))
+		};
+		let index = contactList.findIndex(findContact.bind(this, id));
 		// Remove contact
 		let newContacts = contactList;
 		newContacts.splice(index, 1);
@@ -126,7 +126,7 @@ class Contacts extends Component {
 	}
 
 	render(){
-		const style = this.style()
+		const style = this.style();
 		return(
 			<div style={{ flex: 1, display: 'flex', flexDirection: 'column', height: '100%' }}>
 				<header style={style.header}>
@@ -138,7 +138,7 @@ class Contacts extends Component {
 					<div style={ style.rightColumn }> {this.rightColumn()} </div>
 				</div>
 			</div>
-		)
+		);
 	}
 
 	style(){
