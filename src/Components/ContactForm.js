@@ -63,7 +63,11 @@ class ContactForm extends Component{
 
 	tags(){
 		let { tags } = this.props;
-		return <SelectTag options={tags} value={this.state.user.tags} addTag={this.addTag.bind(this)} removeTag={this.removeTag.bind(this)}/>;
+		return <SelectTag 
+			options={tags} 
+			value={this.state.user.tags} 
+			addTag={this.addTag.bind(this)} 
+			removeTag={this.removeTag.bind(this)}/>;
 	}
 
 	render(){
@@ -119,8 +123,12 @@ class ContactForm extends Component{
 						</div>
 					</div>
 					<div style={ style.formInputs }>
-						<div style={ style.buttonCancel } onClick={ this.handleClose.bind(this) }>Annuler</div>
-						<div style={ style.buttonConfirm } onClick={ this.handleSubmit.bind(this) }>Sauver</div>
+						<div 
+							style={ style.buttonCancel } 
+							onClick={ this.handleClose.bind(this) }>Annuler</div>
+						<div 
+							style={ style.buttonConfirm } 
+							onClick={ this.handleSubmit.bind(this) }>Sauver</div>
 
 					</div>
 				</form>

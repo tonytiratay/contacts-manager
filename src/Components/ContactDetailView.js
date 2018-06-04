@@ -18,7 +18,11 @@ class ContactDetailView extends Component {
 
 	tags(){
 		let { tags, user } = this.props;
-		return <SelectTag options={tags} value={user.tags} addTag={this.addTag.bind(this)} removeTag={this.removeTag.bind(this)}/>;
+		return <SelectTag 
+			options={tags} 
+			value={user.tags} 
+			addTag={this.addTag.bind(this)} 
+			removeTag={this.removeTag.bind(this)}/>;
 	}
 
 	addTag(tag){
@@ -27,7 +31,9 @@ class ContactDetailView extends Component {
 	}
 
 	deleteContact(contactId){
-		return window.confirm("Êtes vous sur de vouloir effacer ce contact ?") ? this.props.deleteContact(contactId) : false;
+		return window.confirm("Êtes vous sur de vouloir effacer ce contact ?") 
+			? this.props.deleteContact(contactId) 
+			: false;
 	}
 
 	removeTag(tag){
@@ -49,14 +55,18 @@ class ContactDetailView extends Component {
 			let { name, avatar, company, email, githubName, id } = this.props.user;
 			return (
 				<div style={style.container}>
+
 					<div style={style.userContainer}>
+
 						<div style={style.imageContainer}>
 							<div style={{ ...style.image, 
 								backgroundImage: `url(${avatar})`, 
 								border: isEven(this.props.index) ? '2px solid #fff' : '2px solid ' + grey,}}>
 							</div>
 						</div>
+
 						<div style={style.userInfo}>
+
 							<div>
 								<input 
 									style={style.inputName} 
@@ -65,6 +75,7 @@ class ContactDetailView extends Component {
 									onChange={this.handleEdit.bind(this)}
 									value={name || 'non renseigné'}/>
 							</div>
+
 							<div><b style={style.label}>Travail chez: </b>
 								<input 
 									style={style.inputCompany} 
@@ -73,6 +84,7 @@ class ContactDetailView extends Component {
 									onChange={this.handleEdit.bind(this)}
 									value={company || 'non renseigné'}/>
 							</div>
+
 							<div><b style={style.label}>Adresse mail: </b>
 								<input 
 									style={style.inputCompany} 
@@ -81,6 +93,7 @@ class ContactDetailView extends Component {
 									onChange={this.handleEdit.bind(this)}
 									value={email || 'non renseigné'}/>
 							</div>
+
 							<div><b style={style.label}>Profil Github: </b>
 								<input 
 									style={style.inputCompany} 
@@ -89,19 +102,32 @@ class ContactDetailView extends Component {
 									onChange={this.handleEdit.bind(this)}
 									value={githubName || 'non renseigné'}/>
 							</div>
+
 						</div>
 						<div style={style.delete}>
-							<div style={ style.button} onClick={this.deleteContact.bind(this, id)}>Supprimer</div>
+
+							<div 
+								style={ style.button} 
+								onClick={this.deleteContact.bind(this, id)}>Supprimer
+							</div>
+
 						</div>
+
 					</div>
+
 					<div style={style.infos}>
+
 						<div style={ style.formInputs }>
+
 							<div style={ style.formInputContainer }>
 								<div><label style={ style.label } htmlFor="tags">Tags associés</label></div>
 								{this.tags()}
 							</div>
+						
 						</div>
+					
 					</div>
+				
 				</div>
 			);
 		} else {

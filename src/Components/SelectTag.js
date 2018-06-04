@@ -23,7 +23,10 @@ class SelectTag extends Component {
 			<div style={style.selector}>
 				{ this.props.value.map((tag)=>{
 				return (
-					<div  style={style.selected} key={tag} onClick={ this.removeTag.bind(this, tag) }>
+					<div  
+						style={style.selected} 
+						key={tag} 
+						onClick={ this.removeTag.bind(this, tag) }>
 						{tag}
 					</div>
 				)
@@ -37,7 +40,10 @@ class SelectTag extends Component {
 			<div style={style.selector} >
 				{ filterSelected(this.props.options, this.props.value).map((tag)=>{
 					return (
-						<div style={style.selectable} key={tag} onClick={ this.addTag.bind(this, tag) }>
+						<div 
+							style={style.selectable} 
+							key={tag} 
+							onClick={ this.addTag.bind(this, tag) }>
 							{tag}
 						</div>
 					)

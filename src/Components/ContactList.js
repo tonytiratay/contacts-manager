@@ -18,12 +18,18 @@ class ContactList extends Component {
 		return(
 			<div style={style.container}>
 				<div style={style.buttonContainer}>
-					<div style={style.button} onClick={this.handleToggleContactNew.bind(this)}>Nouveau Contact</div>
+					<div 
+						style={style.button} 
+						onClick={this.handleToggleContactNew.bind(this)}>Nouveau Contact</div>
 				</div>
 				{ contacts.map((contact, index)=>{
 					return (
 						<div style={ style.item } key={contact.id}>
-							<ContactItem contact={contact} key={contact.id} index={index} onClick={this.handleContactClick.bind(this, contact)}/>
+							<ContactItem 
+								contact={contact} 
+								key={contact.id} 
+								index={index} 
+								onClick={this.handleContactClick.bind(this, contact)}/>
 						</div>
 					)
 				}) }

@@ -59,7 +59,10 @@ class Contacts extends Component {
 	leftColumn(){
 		return(
 			<div style={{ display: 'flex', flex: 1, }}>
-				<ContactList contacts={this.state.contactList} onToggleContactNew={this.setView.bind(this)} onClick={this.handleContactClick.bind(this)}/>
+				<ContactList 
+					contacts={this.state.contactList} 
+					onToggleContactNew={this.setView.bind(this)} 
+					onClick={this.handleContactClick.bind(this)}/>
 			</div>
 		);
 	}
@@ -130,8 +133,16 @@ class Contacts extends Component {
 		return(
 			<div style={{ flex: 1, display: 'flex', flexDirection: 'column', height: '100%' }}>
 				<header style={style.header}>
-		          <img style={style.cursor} src={logo} className="App-logo" alt="logo" onClick={this.setView.bind(this, 'home')}/>
-		          <h1 style={style.cursor} className="App-title" onClick={this.setView.bind(this, 'home')}>GITHUB<br/>CONTACT MANAGER</h1>
+		          <img 
+		          	style={style.cursor} 
+		          	src={logo} 
+		          	className="App-logo" 
+		          	alt="logo" 
+		          	onClick={this.setView.bind(this, 'home')}/>
+		          <h1 
+		          	style={style.cursor} 
+		          	className="App-title" 
+		          	onClick={this.setView.bind(this, 'home')}> GITHUB<br/>CONTACT MANAGER </h1>
 		        </header>
 		        <div style={ style.container }>
 					<div style={ style.leftColumn }> {this.leftColumn()} </div>

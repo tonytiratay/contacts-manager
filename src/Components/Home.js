@@ -7,7 +7,10 @@ class Home extends Component {
 			<div style={ style.container }>
 				<div>
 					<div style={{ textAlign: 'center'}}> 
-						<img style={style.image} src="/github-jedi.jpg" alt="Github Jedi Caracter"/>
+						<img 
+							style={style.image} 
+							src="/github-jedi.jpg" 
+							alt="Github Jedi Caracter"/>
 					</div>
 					<h1 style={ style.title }>Gérez tous vos contacts Github</h1>
 				</div>
