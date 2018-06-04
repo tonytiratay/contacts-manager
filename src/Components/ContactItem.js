@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 
-let isEven = (num) => {
+const isEven = (num) => {
 	return num % 2 === 0
 };
-
 const grey = "#efefef";
 
 class Contactitem extends Component {

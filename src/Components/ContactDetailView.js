@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import SelectTag from './SelectTag';
 
-let isEven = (num) => {
+const isEven = (num) => {
 	return num % 2 === 0
 };
-
 const grey = "#efefef";
 
 class ContactDetailView extends Component {
@@ -26,16 +25,17 @@ class ContactDetailView extends Component {
 	}
 
 	deleteContact(contactId){
-		console.log('id: ', contactId);
-		window.confirm("Êtes vous sur de vouloir effacer ce contact ?") ? this.props.deleteContact(contactId) : false;
+		return window.confirm("Êtes vous sur de vouloir effacer ce contact ?") ? this.props.deleteContact(contactId) : false;
 	}
 
 	removeTag(tag){
 		let tags = this.props.user.tags;
+		// Find tag index
 		function findTag(elem, tagToFind) {
 		  return elem === tagToFind;
 		}
 		let index = tags.findIndex(findTag.bind(this, tag));
+		// Remove tag
 		let newTags = [...tags];
 		newTags.splice(index, 1);
 		this.props.handleEditUserInfo({ tags: newTags });
@@ -44,7 +44,7 @@ class ContactDetailView extends Component {
 	render(){
 		let { user } = this.props;
 		if (user) {
-			let { name, avatar, company, email, githubName, hireable, tags, id } = this.props.user;
+			let { name, avatar, company, email, githubName, id } = this.props.user;
 			let style = this.style();
 			return (
 				<div style={style.container}>

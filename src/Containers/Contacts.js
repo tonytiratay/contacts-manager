@@ -4,8 +4,8 @@ import '../App.css';
 import faker from 'faker';
 
 import data from '../data.js';
+
 import ContactList from '../Components/ContactList'
-import ContactForm from '../Components/ContactForm';
 import ContactDetailView from '../Components/ContactDetailView';
 import Home from '../Components/Home';
 
@@ -65,26 +65,26 @@ class Contacts extends Component {
 
 	handleEditUserInfo(userProps){
 		let { userSelected, contactList } = this.state;
-		console.log('user props: ', userProps)
+		// Merge new key / value from userProps in existing user
 		let newUser = { ...userSelected, ...userProps };
 		this.setState({ userSelected: newUser });
+		// Find and replace old user in contact list
 		let newContactList = contactList.map((c) => {
 			return c.id === newUser.id ? newUser : c;
 		});
 		this.setState({ contactList: newContactList });
-		console.log(newUser, this.state)
 	}
 
 	deleteContact(id){
 		let { contactList } = this.state;
+		// Find contact to delete in contact list
 		function findContact(id, elem) {
 		  return elem.id === id;
 		}
 		let index = contactList.findIndex(findContact.bind(this, id))
-		console.log(index);
+		// Remove contact
 		let newContacts = contactList;
 		newContacts.splice(index, 1);
-		console.log(newContacts)
 		this.setState({ contactList: newContacts, activeView: 'home', userSelected: false });
 	}
 
@@ -165,7 +165,6 @@ class Contacts extends Component {
 				minWidth: 250,
 				background: '#333',
 				overflowY: 'scroll',
-				minWidth: 250,
 			},
 			rightColumn: {
 				display: 'flex',

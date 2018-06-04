@@ -26,7 +26,7 @@ class ContactForm extends Component{
 
 	handleChange(e){
 		let updateUser = { ...this.state.user };
-		let { value, name, checked } = e.target;
+		let { value, name } = e.target;
 		updateUser[name] =  name === 'tags' ? [value] : value;
 		console.log(updateUser.hireable)
 		this.setState({ user: updateUser });
@@ -39,12 +39,13 @@ class ContactForm extends Component{
 	}
 
 	removeTag(tag){
+		// Find tag in list
 		let tags = this.state.user.tags;
 		function findTag(elem, tagToFind) {
 		  return elem === tagToFind;
 		}
 		let index = tags.findIndex(findTag.bind(this, tag))
-		console.log(index);
+		// Remove tag
 		let newTags = tags.splice(index, 1);
 		console.log(newTags)
 		this.setState({ user: {...this.state.user, tags}});
@@ -53,6 +54,7 @@ class ContactForm extends Component{
 	handleSubmit(e){
 		e.preventDefault();
 		let { user } = this.state;
+		// IF no avatar use a generated one
 		user.avatar ? false : user.avatar = 'https://placeimg.com/200/200/people?q=' + new Date();
 		this.props.onSave(user);
 	}
@@ -116,7 +118,6 @@ class ContactForm extends Component{
 						</div>
 					</div>
 					<div style={ style.formInputs }>
-
 						<div style={ style.buttonCancel } onClick={ this.handleClose.bind(this) }>Annuler</div>
 						<div style={ style.buttonConfirm } onClick={ this.handleSubmit.bind(this) }>Sauver</div>
 
