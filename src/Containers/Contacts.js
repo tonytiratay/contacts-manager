@@ -3,6 +3,7 @@ import logo from '../logo.svg';
 import '../App.css';
 import faker from 'faker';
 
+import style from '../style/contacts';
 import data from '../data.js';
 
 import ContactList from '../Components/ContactList'
@@ -126,7 +127,6 @@ class Contacts extends Component {
 	}
 
 	render(){
-		const style = this.style();
 		return(
 			<div style={{ flex: 1, display: 'flex', flexDirection: 'column', height: '100%' }}>
 				<header style={style.header}>
@@ -139,41 +139,6 @@ class Contacts extends Component {
 				</div>
 			</div>
 		);
-	}
-
-	style(){
-		return {
-			header: {
-				display: 'flex',
-				alignItems: 'center',
-				backgroundColor: '#222',
-				height: '100px',
-				padding: '20px',
-				color: 'white',
-			},
-			cursor: {
-				cursor: 'pointer',
-			},
-			container: {
-				display: 'flex',
-				flex: 1,
-				flexWrap: 'wrap',
-			},
-			leftColumn: {
-				display: 'flex',
-				flex: 1,
-				minWidth: 250,
-				background: '#333',
-				overflowY: 'scroll',
-			},
-			rightColumn: {
-				display: 'flex',
-				flex: 1,
-				overflowY: 'scroll',
-				minWidth: 300,
-
-			}
-		};
 	}
 }
 
