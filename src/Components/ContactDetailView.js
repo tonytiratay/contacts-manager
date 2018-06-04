@@ -105,7 +105,7 @@ class ContactDetailView extends Component {
 				</div>
 			);
 		} else {
-			return <div>Pas d'utilisateur à afficher</div>;
+			return <div>Rien à afficher</div>;
 		}
 	}
 }
