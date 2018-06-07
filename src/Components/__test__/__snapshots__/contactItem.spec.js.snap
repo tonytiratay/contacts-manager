@@ -1,0 +1,90 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render correctly 1`] = `
+<div
+  style={
+    Object {
+      "alignItems": "center",
+      "background": "#555",
+      "display": "flex",
+      "flex": 1,
+      "padding": 10,
+    }
+  }
+>
+  <div
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "#555",
+        "cursor": "pointer",
+        "display": "flex",
+        "flex": 1,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "display": "flex",
+          "marginLeft": "5px",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "alignSelf": "center",
+            "backgroundImage": "url(avatarurl.com)",
+            "backgroundSize": "cover",
+            "border": "2px solid #fff",
+            "borderRadius": "50%",
+            "height": "50px",
+            "width": "50px",
+          }
+        }
+      />
+    </div>
+    <div
+      style={
+        Object {
+          "alignItems": "center",
+          "color": "#ddd",
+          "flex": 1,
+          "marginLeft": "10px",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "flex": 1,
+          }
+        }
+      >
+        <h3
+          style={
+            Object {
+              "fontSize": "18px",
+              "fontWeight": "300",
+              "marginBottom": -10,
+            }
+          }
+        >
+          JohnDoe
+        </h3>
+        <h3
+          style={
+            Object {
+              "fontSize": "14px",
+              "fontWeight": "300",
+            }
+          }
+        >
+          Leikir
+        </h3>
+      </div>
+    </div>
+  </div>
+</div>
+`;

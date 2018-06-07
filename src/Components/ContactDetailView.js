@@ -59,7 +59,7 @@ class ContactDetailView extends Component {
 						<div style={style.imageContainer}>
 							<div style={{ ...style.image, 
 								backgroundImage: `url(${avatar})`, 
-								border: isEven(this.props.index) ? '2px solid #fff' : '2px solid ' + grey,}}>
+								border: '2px solid ' + grey,}}>
 							</div>
 						</div>
 
