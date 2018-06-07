@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import SelectTag from './SelectTag';
 import style from '../style/contactDetailView';
 import PropTypes from 'prop-types';
-import isEven from '../utils/isEven';
 
 const grey = "#efefef";
 

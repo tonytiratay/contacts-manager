@@ -4,5 +4,8 @@ export default (number) => {
 		return number % 2 === 0;
 	}  
 
-	throw { name: 'Not a number', message: 'You must provide a number to the function but we received ' + number};
+	throw { 
+		name: 'Not a number', 
+		message: 'You must provide a number to the function but we received ' + number
+	};
 };
