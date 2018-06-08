@@ -35,7 +35,7 @@ exports[`Should render correctly 1`] = `
         style={
           Object {
             "alignSelf": "center",
-            "backgroundImage": "url(avatarurl.com)",
+            "backgroundImage": "url(http://avatarurl.com/pic.jpg)",
             "backgroundSize": "cover",
             "border": "2px solid #fff",
             "borderRadius": "50%",

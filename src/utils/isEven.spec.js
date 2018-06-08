@@ -11,7 +11,7 @@ describe('IsEven function', ()=>{
 	});
 	
 	it('should throw an error', ()=>{
-		expect( () => isEven('Not a number paramter') ).toThrow();
+		expect( () => isEven() ).toThrow('must provide a number');
 	});
 
 });

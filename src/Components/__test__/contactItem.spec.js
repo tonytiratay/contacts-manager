@@ -6,7 +6,7 @@ import ContactItem from '../ContactItem';
 it('Should render correctly', ()=>{
 
 	const contact = {
-		avatar: 'avatarurl.com',
+		avatar: 'http://avatarurl.com/pic.jpg',
 		name: 'JohnDoe',
 		company: 'Leikir',
 	};
