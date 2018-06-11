@@ -1,0 +1,301 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render correctly 1`] = `
+<div
+  style={
+    Object {
+      "display": "flex",
+      "flex": 1,
+      "flexDirection": "column",
+      "padding": 20,
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "alignItems": "flex-start",
+        "display": "flex",
+        "justifyItems": "flex-start",
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "display": "flex",
+          "marginLeft": "10px",
+          "marginRight": "10px",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "alignSelf": "center",
+            "backgroundImage": "url(http://avatarurl.com/pic.jpg)",
+            "backgroundSize": "cover",
+            "border": "2px solid #efefef",
+            "borderRadius": "50%",
+            "height": "100px",
+            "width": "100px",
+          }
+        }
+      />
+    </div>
+    <div
+      style={
+        Object {
+          "alignSelf": "center",
+          "marginLeft": "10px",
+        }
+      }
+    >
+      <div>
+        <input
+          name="name"
+          onChange={[Function]}
+          style={
+            Object {
+              "border": "none",
+              "color": "#333",
+              "fontSize": "30px",
+              "fontWeight": "300",
+            }
+          }
+          type="text"
+          value="JohnDoe"
+        />
+      </div>
+      <div>
+        <b
+          style={
+            Object {
+              "color": "#666",
+              "fontSize": 13,
+              "marginRight": 5,
+            }
+          }
+        >
+          Travail chez: 
+        </b>
+        <input
+          name="company"
+          onChange={[Function]}
+          style={
+            Object {
+              "border": "none",
+              "fontSize": 14,
+              "marginLeft": 10,
+            }
+          }
+          type="text"
+          value="Leikir"
+        />
+      </div>
+      <div>
+        <b
+          style={
+            Object {
+              "color": "#666",
+              "fontSize": 13,
+              "marginRight": 5,
+            }
+          }
+        >
+          Adresse mail: 
+        </b>
+        <input
+          name="email"
+          onChange={[Function]}
+          style={
+            Object {
+              "border": "none",
+              "fontSize": 14,
+              "marginLeft": 10,
+            }
+          }
+          type="text"
+          value="non renseigné"
+        />
+      </div>
+      <div>
+        <b
+          style={
+            Object {
+              "color": "#666",
+              "fontSize": 13,
+              "marginRight": 5,
+            }
+          }
+        >
+          Profil Github: 
+        </b>
+        <input
+          name="githubName"
+          onChange={[Function]}
+          style={
+            Object {
+              "border": "none",
+              "fontSize": 14,
+              "marginLeft": 10,
+            }
+          }
+          type="text"
+          value="non renseigné"
+        />
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "display": "flex",
+          "justifyItems": "flex-end",
+        }
+      }
+    >
+      <div
+        onClick={[Function]}
+        style={
+          Object {
+            "background": "#ff0000",
+            "borderRadius": 10,
+            "color": "#fff",
+            "cursor": "pointer",
+            "flex": 1,
+            "height": "17px",
+            "margin": "10px",
+            "padding": 10,
+            "textAlign": "center",
+          }
+        }
+      >
+        Supprimer
+      </div>
+    </div>
+  </div>
+  <div
+    style={
+      Object {
+        "display": "flex",
+        "flex": 1,
+        "marginTop": 20,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "border": "1px solid #efefef",
+          "display": "flex",
+          "flexWrap": "wrap",
+          "marginBottom": 15,
+          "padding": 15,
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "alignItems": "center",
+            "display": "flex",
+            "flex": 1,
+            "flexDirection": "column",
+            "flexWrap": "wrap",
+            "margin": "10px",
+          }
+        }
+      >
+        <div>
+          <label
+            htmlFor="tags"
+            style={
+              Object {
+                "color": "#666",
+                "fontSize": 13,
+                "marginRight": 5,
+              }
+            }
+          >
+            Tags associés
+          </label>
+        </div>
+        <div
+          style={
+            Object {
+              "display": "flex",
+              "flex": 1,
+              "flexWrap": "wrap",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "border": "1px solid #efefef",
+                "flex": 1,
+                "margin": 10,
+                "minHeight": 170,
+                "minWidth": 250,
+                "padding": 10,
+              }
+            }
+          >
+            <div
+              onClick={[Function]}
+              style={
+                Object {
+                  "cursor": "pointer",
+                  "flex": 1,
+                  "padding": 5,
+                }
+              }
+            >
+              javascript, meteor, redux, react, node, python
+            </div>
+          </div>
+          <div
+            style={
+              Object {
+                "border": "1px solid #efefef",
+                "flex": 1,
+                "margin": 10,
+                "minHeight": 170,
+                "minWidth": 250,
+                "padding": 10,
+              }
+            }
+          >
+            <div
+              onClick={[Function]}
+              style={
+                Object {
+                  "borderLeft": "3px solid #bdf2ae",
+                  "cursor": "pointer",
+                  "flex": 1,
+                  "padding": 6,
+                }
+              }
+            >
+              javascript
+            </div>
+            <div
+              onClick={[Function]}
+              style={
+                Object {
+                  "borderLeft": "3px solid #bdf2ae",
+                  "cursor": "pointer",
+                  "flex": 1,
+                  "padding": 6,
+                }
+              }
+            >
+              react
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

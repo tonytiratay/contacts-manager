@@ -1,4 +1,5 @@
 export default (number) => {
+	// If param is invalid, throw an ERROR
 	if ( isNaN(number) || number === null || number === false ) {
 
 		throw { 
