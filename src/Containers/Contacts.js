@@ -49,9 +49,11 @@ class Contacts extends Component {
 		contactList.push(user);
 		this.setState({
 			contactList,
+			filteredArray: contactList,
 			userSelected: user,
 			activeView: 'view'
 		});
+		this.changeFilter('');
 	}
 
 	handleContactClick(user){
@@ -63,7 +65,6 @@ class Contacts extends Component {
 
 	changeFilter(value){
 		let { contactList } = this.state;
-		console.log(contactList);
 		let newArr = filter(contactList, (elem)=>{
 			return elem.name.toUpperCase().includes(value.toUpperCase());
 		});
@@ -93,7 +94,8 @@ class Contacts extends Component {
 		let newContactList = contactList.map((c) => {
 			return c.id === newUser.id ? newUser : c;
 		});
-		this.setState({ contactList: newContactList });
+		this.setState({ contactList: newContactList, filteredArray: newContactList });
+		this.changeFilter('');
 	}
 
 	deleteContact(id){
@@ -106,7 +108,8 @@ class Contacts extends Component {
 		// Remove contact
 		let newContacts = contactList;
 		newContacts.splice(index, 1);
-		this.setState({ contactList: newContacts, activeView: 'home', userSelected: false });
+		this.setState({ contactList: newContacts, filteredArray: newContacts, activeView: 'home', userSelected: false });
+		this.changeFilter('');
 	}
 
 	rightColumn(){
