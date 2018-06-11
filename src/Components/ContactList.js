@@ -13,6 +13,10 @@ class ContactList extends Component {
 		this.props.onClick(contact);
 	}
 
+	changeFilter(e){
+		this.props.changeFilter(e.target.value)
+	}
+
 	render(){
 		const { contacts } = this.props;
 		return(
@@ -20,7 +24,14 @@ class ContactList extends Component {
 				<div style={style.buttonContainer}>
 					<div 
 						style={style.button} 
-						onClick={this.handleToggleContactNew.bind(this)}>Nouveau Contact</div>
+						onClick={this.handleToggleContactNew.bind(this)}>Nouveau Contact
+					</div>
+					<input 
+						type="text" 
+						value={this.props.filter} 
+						onChange={this.changeFilter.bind(this)}
+						name='filter' />
+
 				</div>
 				{ contacts.map((contact, index)=>{
 					return (

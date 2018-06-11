@@ -10,6 +10,8 @@ import ContactList from '../Components/ContactList'
 import ContactDetailView from '../Components/ContactDetailView';
 import Home from '../Components/Home';
 
+import { filter } from 'lodash'
+
 
 class Contacts extends Component {
 	constructor(){
@@ -17,8 +19,10 @@ class Contacts extends Component {
 		this.state = {
 			contactList: data.contacts,
 			tags: data.tags,
+			filteredArray: data.contacts,
 			activeView: 'home',
 			userSelected: false,
+			filter: '',
 		};
 	}
 
@@ -32,6 +36,7 @@ class Contacts extends Component {
 			avatar: 'https://placeimg.com/200/200/people',
 			githubName: '',
 			tags: [],
+
 		}
 	}
 
@@ -56,11 +61,23 @@ class Contacts extends Component {
 		});
 	}
 
+	changeFilter(value){
+		let { contactList } = this.state;
+		console.log(contactList);
+		let newArr = filter(contactList, (elem)=>{
+			return elem.name.toUpperCase().includes(value.toUpperCase());
+		});
+		this.setState({ filter: value, filteredArray: newArr }) 
+		
+	}
+
 	leftColumn(){
 		return(
 			<div style={{ display: 'flex', flex: 1, }}>
 				<ContactList 
-					contacts={this.state.contactList} 
+					filter= {this.state.filter}
+					changeFilter={this.changeFilter.bind(this)}
+					contacts={this.state.filteredArray} 
 					onToggleContactNew={this.setView.bind(this)} 
 					onClick={this.handleContactClick.bind(this)}/>
 			</div>
